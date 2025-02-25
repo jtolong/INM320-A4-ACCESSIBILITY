@@ -1,3 +1,4 @@
+// stores information in session storage
 document.addEventListener("DOMContentLoaded", function () {
     if (sessionStorage.getItem("savedName")) {
         document.getElementById("name").value = sessionStorage.getItem("savedName");
@@ -5,17 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (sessionStorage.getItem("savedEmail")) {
         document.getElementById("email").value = sessionStorage.getItem("savedEmail");
     }
+    
     const checkboxWrapper = document.querySelector("form .flexbox");
     const checkbox = document.querySelector("form .flexbox span");
     const form = document.querySelector("form");
     const errorDiv = document.getElementById("form-error");
 
-    // Checkbox toggle functionality
+    // Checkbox on or off
     checkboxWrapper.addEventListener("click", function () {
         checkbox.classList.toggle("checked");
+        checkbox.setAttribute("aria-checked", checkbox.classList.contains("checked"));
     });
 
-    // Form validation and confirmation before submission
+    // Confirm form before submission
     form.addEventListener("submit", function (event) {
         sessionStorage.setItem("savedName", document.getElementById("name").value);
         sessionStorage.setItem("savedEmail", document.getElementById("email").value);
@@ -46,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Confirmation before final submission
+        // Final confirmation before submission
         const confirmation = confirm(
             `Please confirm your details before submission:\n\nFull Name: ${name}\nEmail: ${email}\n\nClick OK to submit or Cancel to edit.`
         );
@@ -56,3 +59,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// Navbar Accessibility
+// document.addEventListener('DOMContentLoaded', function () {
+//     const menuToggle = document.getElementById('menu-toggle');
+//     const menu = document.getElementById('primary-menu');
+//     const submenus = document.querySelectorAll('.menu-item-has-children');
+
+//     menuToggle.addEventListener('click', function () {
+//         const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+//         menuToggle.setAttribute('aria-expanded', !expanded);
+//         menu.hidden = expanded;
+//         menu.setAttribute('aria-hidden', expanded);
+//     });
+
+//     submenus.forEach(submenu => {
+//         const button = submenu.querySelector('.submenu-toggle');
+//         const sublist = submenu.querySelector('ul');
+//         button.addEventListener('click', function () {
+//             const expanded = button.getAttribute('aria-expanded') === 'true';
+//             button.setAttribute('aria-expanded', !expanded);
+//             sublist.hidden = expanded;
+//             submenu.setAttribute('aria-expanded', !expanded);
+//         });
+//     });
+// });

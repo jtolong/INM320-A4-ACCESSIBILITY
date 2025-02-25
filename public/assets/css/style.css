@@ -22,7 +22,7 @@ a {
 }
 
 a:hover {
-    color: #999999;
+    color: #666666;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,7 +59,7 @@ input[type=text], input[type=email] {
 }
 
 input[type=text]:focus, input[type=email]:focus {
-    outline: 2px solid #35c4ce;
+    outline: 2px solid #0088a8;
 }
 
 form .flexbox {
@@ -153,18 +153,18 @@ article {
 }
 
 .post-title a:hover {
-    color: #35c4ce;
+    color: #0088a8;
 }
 
 footer {
     padding: 30px 0;
     text-align: center;
     background: #eaf2ff;
-    color: #989898;
+    color: #555555;
 }
 
 #footer a {
-    color: #989898;
+    color: #555555;
 }
 
 #footer a:hover {
@@ -197,7 +197,7 @@ footer {
 #footer-copyright {
     padding: 20px 0;
     font-size: 12px;
-    color: #989898;
+    color: #555555;
 }
 
 @media only screen and (min-width: 650px) {
@@ -229,13 +229,13 @@ footer {
         font-weight: 900;
     }
     header nav a:hover {
-        color: #35c4ce;
+        color: #0088a8;
     }
     .image-part img {
         transition: transform 3.5s ease-in-out;
     }
     .image-part img:hover {
-        transform: scale(1.5,1.5);
+        transform: scale(0.5,0.5);
     }
     .content-part {
         flex: 1;
