@@ -1,77 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>INM320 Assignment 5: Accessibility</title>
-
+    <title>Dreamla - Accessible Travel and Lifestyle Blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" />
-    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Quando:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CJosefin+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' type='text/css' media='all' />
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Quando|Josefin+Sans' type='text/css' media='all' />
     <link rel="stylesheet" href="/assets/css/style.css" />
-
     <script src="https://kit.fontawesome.com/2216cb6a92.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <a href="#main-content" class="skip-link" tabindex="1">Skip to content</a>
     <header>
         <div class="container">
-            <nav>
-                <ul>
+            <nav aria-label="Primary Navigation" role="navigation" tabindex="2">
+                <ul role="list">
                     <li class="menu-item-has-children">
-                        <a href="#">Features</a>
+                        <a href="#">Explore Features</a>
                         <ul>
-                            <li><a href="">Standard Post</a></li>
-                            <li><a href="">Video Thumbnail Post</a></li>
-                            <li><a href="">Gallery Post</a></li>
-                            <li><a href="">Video Post</a></li>
-                            <li><a href="">Audio Post</a></li>
+                            <li><a href="#">Standard Post</a></li>
+                            <li><a href="#">Video Thumbnail Post</a></li>
+                            <li><a href="#">Gallery Post</a></li>
+                            <li><a href="#">Video Post</a></li>
+                            <li><a href="#">Audio Post</a></li>
                         </ul>
                     </li>
-                    <li class="current-menu-item"><a href="">Guides</a></li>
-                    <li><a href="">Trends</a></li>
-                    <li><a href="">About Me</a></li>
-                    <li><a href="">Contact Me</a></li>
+                    <li class="current-menu-item"><a href="#">Read Our Guides</a></li>
+                    <li><a href="#">Latest Trends</a></li>
+                    <li><a href="#">Learn About Me</a></li>
+                    <li><a href="#">Get in Touch</a></li>
                 </ul>
             </nav>
-
-            <div class="top-logo">
-                <a href="/"><img src="/assets/images/site-logo.png" alt="" /></a>
+            <div class="top-logo" tabindex="3">
+                <a href="/"><img src="/assets/images/site-logo.png"
+                        alt="Dreamla site logo featuring blue and white elements for a sleek, modern aesthetic." longdesc="/assets/descriptions/site-logo-description.txt" /></a>
+                        aria-hidden="true" longdesc="/assets/descriptions/site-logo-description.txt" /></a>
             </div>
-        </div>  
+        </div>
     </header>
 
-    <main>
+    <main id="main-content" tabindex="4">
         <div class="container">
             <article>
                 <div class="image-part">
-                    <a href="">
-                        <img width="960" height="750" src="/assets/images/top-places-you-should-visit-right-now.jpg" alt=""/>  
+                    <a href="#">
+                        <img width="960" height="750" src="/assets/images/top-places-you-should-visit-right-now.jpg"
+                            alt="A scenic landscape with green mountains and a deep blue lake symbolizing adventure and relaxation." longdesc="/assets/descriptions/top-places-description.txt" />
+                            aria-hidden="true" longdesc="/assets/descriptions/top-places-description.txt" />
                     </a>
                 </div>
-
                 <div class="content-part">
                     <div class="post-header">
-                        <h3 class="post-title">
-                            <a href="">Top Places You Should Visit Right Now</a>
-                        </h3>
+                        <h2 class="post-title" lang="en"><h2 class="post-title">
+                                <a href="#">Top Places You Should Visit Right Now</a>
+                                </h3>
                     </div>
-
                     <div class="post-list-entry">
-                        <p>Contact us to learn more!</p>
+                        <blockquote lang="en"></blockquote><p>Fill out the form below to contact us for more information.
+                        </blockquote></p>
                         <form action="/" method="post">
-                            <label for="Name">Name</label>
-                            <input id="Name" type="text" name="fullname" required />
-                            
-                            <label for="Email">Email</label>
-                            <input id="Email" type="email" name="email" required />
+                            <div class="input-group">
+                                <label for="name">Full Name (First and Last) <span aria-hidden="true"></span></label>
+                                <input id="name" type="text" name="fullname" required />
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email">Email Address (e.g., example@domain.com) <span aria-hidden="true"
+                                        ></span></label>
+                                <input id="email" type="email" name="email" required />
+                            </div>
 
                             <div class="flexbox">
-                                <span></span>
-                                <label class="check">Check Me (required)</label>
+                                <label for="check-me" class="check">By checking this box, you confirm that you have read
+                                    and agree to the terms and conditions <span aria-hidden="true"
+                                        ></span></label>
+                                <input id="check-me" type="checkbox" name="checkbox" required />
                             </div>
 
                             <input type="submit" value="Submit" />
+                            <div id="form-error" aria-live="polite"></div>
                         </form>
                     </div>
                 </div>
@@ -79,26 +89,56 @@
         </div>
     </main>
 
-    <footer id="footer">
+    <footer id="footer" tabindex="5">
         <div class="container">
             <div class="footer-logo">
-                <a href=""><img src="/assets/images/footer-logo.png" alt=""/></a>
-            </div>  
-
-            <div class="footer-social-links">
-                <a href="Facebook" target="_blank"><em class="fa fa-facebook"></em><span>Facebook</span></a>
-                <a href="Twitter" target="_blank"><em class="fa fa-twitter"></em><span>Twitter</span></a>
-                <a href="Instagram" target="_blank"><em class="fa fa-instagram"></em><span>Instagram</span></a>
-                <a href="Youtube" target="_blank"><em class="fa fa-youtube-play"></em><span>Youtube</span></a>
-                <a href="Pinterest" target="_blank"><em class="fa fa-pinterest"></em><span>Pinterest</span></a>
-            </div> 
-            
+                <a href="#"><img src="/assets/images/footer-logo.png"
+                        alt="Footer logo of Dreamla featuring stylish typography in a neutral color scheme."
+                        aria-hidden="true" longdesc="/assets/descriptions/footer-logo-description.txt" /></a>
+            </div>
+            <div class="footer-social-links" role="group" aria-labelledby="social-links-heading">
+                <h2 id="social-links-heading" class="sr-only">Follow us on social media</h2>
+                </h2>
+                <a href="https://www.facebook.com" target="_blank">
+                    <span class="fa fa-facebook" aria-hidden="true"></span>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <span class="fa fa-twitter" aria-hidden="true"></span>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <span class="fa fa-instagram" aria-hidden="true"></span>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                    <span class="sr-only">YouTube</span>
+                </a>
+                <a href="https://www.pinterest.com" target="_blank">
+                    <span class="fa fa-pinterest" aria-hidden="true"></span>
+                    <span class="sr-only">Pinterest</span>
+                </a>
+            </div>
             <div id="footer-copyright">
                 &copy; 2021 Dreamla - All Rights Reserved.
             </div>
         </div>
+        <div class="sitemap">
+            <h2>Site Map</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Explore Features</a></li>
+                <li><a href="#">Read Our Guides</a></li>
+                <li><a href="#">Latest Trends</a></li>
+                <li><a href="#">Learn About Me</a></li>
+                <li><a href="#">Get in Touch</a></li>
+            </ul>
+        </div>
     </footer>
 
     <script src="/assets/js/main.js"></script>
+
 </body>
+
 </html>
