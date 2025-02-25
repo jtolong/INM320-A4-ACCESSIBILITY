@@ -1,0 +1,13 @@
+{
+  "name": "a5-accessibility",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "lite-server --baseDir=\"public\""
+  },
+  "author": "Joy Tolong",
+  "private": true,
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
