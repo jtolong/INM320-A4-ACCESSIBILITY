@@ -5,38 +5,34 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dreamla - Accessible Travel and Lifestyle Blog</title>
+    <title>DreamLA - Accessible Travel and Lifestyle Blog</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <script src="/assets/js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/2216cb6a92.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
-
     <header>
         <div class="container">
-            <nav aria-label="Primary Navigation" role="navigation">
-    <!-- <button id="menu-toggle" aria-expanded="false" aria-controls="primary-menu">☰ Menu</button>
-                <ul id="primary-menu" role="list" aria-hidden="true">
-                    <li class="menu-item-has-children" aria-haspopup="true" aria-expanded="false">
-    <button class="submenu-toggle" aria-expanded="false">▼</button> -->
-                        <a href="#">Explore Features</a>
-                        <ul role="list">
-                            <li><a href="#">Standard Post</a></li>
-                            <li><a href="#">Video Thumbnail Post</a></li>
-                            <li><a href="#">Gallery Post</a></li>
-                            <li><a href="#">Video Post</a></li>
-                            <li><a href="#">Audio Post</a></li>
+            <nav>
+                <ul>
+                    <li class="menu-item-has-children">
+                        <a href="#">Features</a>
+                        <ul>
+                            <li><a href="">Standard Post</a></li>
+                            <li><a href="">Video Thumbnail Post</a></li>
+                            <li><a href="">Gallery Post</a></li>
+                            <li><a href="">Video Post</a></li>
+                            <li><a href="">Audio Post</a></li>
                         </ul>
                     </li>
-                    <li class="current-menu-item"><a href="#">Read Our Guides</a></li>
-                    <li><a href="#">Latest Trends</a></li>
-                    <li><a href="#">Learn About Me</a></li>
-                    <li><a href="#">Get in Touch</a></li>
+                    <li class="current-menu-item"><a href="">Guides</a></li>
+                    <li><a href="">Trends</a></li>
+                    <li><a href="">About Me</a></li>
+                    <li><a href="">Contact Me</a></li>
                 </ul>
             </nav>
             <div class="top-logo">
-                <a href="/"><img src="/assets/images/site-logo.png" alt="" aria-hidden="true"
+                <a href="/"><img src="/assets/images/site-logo.png" alt="site logo for DreamLA" aria-hidden="true"
                         longdesc="/assets/descriptions/site-logo-description.txt" /></a>
             </div>
         </div>
@@ -48,7 +44,7 @@
                 <div class="image-part">
                     <a href="#">
                         <img width="960" height="750" src="/assets/images/top-places-you-should-visit-right-now.jpg"
-                            alt="" aria-hidden="true" longdesc="/assets/descriptions/top-places-description.txt" />
+                            alt="photo of a patio view from a greek island" aria-hidden="true" longdesc="/assets/descriptions/top-places-description.txt" />
                     </a>
                 </div>
                 <div class="content-part">
@@ -59,34 +55,30 @@
                     </div>
                     <div class="post-list-entry">
                         <p>Fill out the form below to contact us for more information.</p>
-                        <form action="/" method="post" aria-labelledby="form-heading"
-                            aria-describedby="form-description">
+                        <form action="/" method="post" aria-labelledby="form-heading" aria-describedby="form-description">
                             <p id="form-description">All fields marked with * are required.</p>
                             <h2 id="form-heading">Contact Us</h2>
+                        
                             <div class="input-group">
-                                <label for="name" id="name-label">Enter your full name (e.g., John Doe) <span
-                                        aria-hidden="true">*</span></label>
-                                <input id="name" type="text" name="fullname" required aria-required="true"
-                                    aria-labelledby="name-label" />
+                                <label for="name">Enter your full name (e.g., John Doe) <span aria-hidden="true">*</span></label>
+                                <input id="name" type="text" name="fullname" required />
                             </div>
-
+                        
                             <div class="input-group">
-                                <label for="email" id="email-label">Enter your email (e.g., example@domain.com) <span
-                                        aria-hidden="true">*</span></label>
-                                <input id="email" type="email" name="email" required aria-required="true"
-                                    aria-labelledby="email-label" />
+                                <label for="email">Enter your email (e.g., example@domain.com) <span aria-hidden="true">*</span></label>
+                                <input id="email" type="email" name="email" required />
                             </div>
-
+                        
                             <div class="flexbox">
-                                <input id="check-me" type="checkbox" name="checkbox" required role="checkbox"
-                                    aria-checked="false" />
-                                <label for="check-me" class="check" aria-labelledby="check-me">I agree to the terms and
-                                    conditions. Checking this box means you accept the website’s policies. <span
-                                        aria-hidden="true">*</span></label>
+                                <input id="check-me" type="checkbox" name="checkbox" required role="checkbox" aria-describedby="checkbox-description" />
+                                <label for="check-me"> I agree to the terms and conditions. Checking this box means you accept the website’s policies. <span aria-hidden="true">*</span></label>
                             </div>
-
-                            <button type="submit">Submit</button>
+                            
+                            <p id="checkbox-description">This checkbox is required to submit the form.</p>
+                        
+                            <button type="submit" aria-label="Submit form">Submit</button>
                         </form>
+                        
                         <div id="form-error" aria-live="polite"></div>
                     </div>
                 </div>
@@ -97,7 +89,7 @@
     <footer id="footer" tabindex="5">
         <div class="container">
             <div class="footer-logo">
-                <a href="#"><img src="/assets/images/footer-logo.png" alt="" aria-hidden="true"
+                <a href="#"><img src="/assets/images/footer-logo.png" alt="site logo for DreamLA" aria-hidden="true"
                         longdesc="/assets/descriptions/footer-logo-description.txt" /></a>
             </div>
             <div class="sitemap">
@@ -135,7 +127,7 @@
                 </a>
             </div>
             <div id="footer-copyright">
-                &copy; 2021 Dreamla - All Rights Reserved.
+                &copy; 2025 DreamLA - All Rights Reserved.
             </div>
         </div>
     </footer>

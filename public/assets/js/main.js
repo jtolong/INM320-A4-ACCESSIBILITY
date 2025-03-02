@@ -1,9 +1,11 @@
 // stores information in session storage
 document.addEventListener("DOMContentLoaded", function () {
     if (sessionStorage.getItem("savedName")) {
+        // store the name in session storage
         document.getElementById("name").value = sessionStorage.getItem("savedName");
     }
     if (sessionStorage.getItem("savedEmail")) {
+        // store the email in session storage
         document.getElementById("email").value = sessionStorage.getItem("savedEmail");
     }
     
@@ -31,19 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
         let errorMessages = [];
 
         if (!name) {
+            // full name is required
             errorMessages.push("Full Name is required. Please enter your first and last name as shown on official documents.");
             valid = false;
         }
         if (!email) {
+            // email is required
             errorMessages.push("Email Address is required. Ensure you enter a valid email format, e.g., example@domain.com.");
             valid = false;
         }
         if (!checkboxInput) {
+            // checkbox is required
             errorMessages.push("You must agree to the terms and conditions to proceed. Please check the box before submitting.");
             valid = false;
         }
 
         if (!valid) {
+            // Display error messages
             event.preventDefault(); // Stop form submission
             errorDiv.innerHTML = errorMessages.join("<br>");
             return;
@@ -60,27 +66,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Navbar Accessibility
-// document.addEventListener('DOMContentLoaded', function () {
-//     const menuToggle = document.getElementById('menu-toggle');
-//     const menu = document.getElementById('primary-menu');
-//     const submenus = document.querySelectorAll('.menu-item-has-children');
-
-//     menuToggle.addEventListener('click', function () {
-//         const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-//         menuToggle.setAttribute('aria-expanded', !expanded);
-//         menu.hidden = expanded;
-//         menu.setAttribute('aria-hidden', expanded);
-//     });
-
-//     submenus.forEach(submenu => {
-//         const button = submenu.querySelector('.submenu-toggle');
-//         const sublist = submenu.querySelector('ul');
-//         button.addEventListener('click', function () {
-//             const expanded = button.getAttribute('aria-expanded') === 'true';
-//             button.setAttribute('aria-expanded', !expanded);
-//             sublist.hidden = expanded;
-//             submenu.setAttribute('aria-expanded', !expanded);
-//         });
-//     });
-// });
